@@ -20,10 +20,12 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 from .views import index
+from blog.views import post_list
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path("", index)
+    path("", index),
+    path("posts/", post_list)
 ]
 urlpatterns += static(
     prefix=settings.MEDIA_URL,
